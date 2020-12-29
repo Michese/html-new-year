@@ -26,6 +26,9 @@ window.onload = function () {
     alternationOfDay();
 
     timerSetIntervalId = setInterval(() => {
+        if(intervalToNewYear2021 <= 0) {
+            intervalToNewYear2021 = 0;
+        }
 
         hours.innerHTML = Math.floor(intervalToNewYear2021 / 3600);
 
@@ -47,13 +50,16 @@ window.onload = function () {
         }
         intervalToNewYear2021 = Math.floor((+newYearDate2021 - +currentDate) / 1000);
 
+        if(intervalToNewYear2021 < 0) {
+            clearInterval(timerSetIntervalId);   
+        }
     }, 1000);
 
 
     
-    const mediaQueryMax768 = window.matchMedia('(max-width: 360px)');
-    const mediaQueryMax768AndMin1200 = window.matchMedia('(min-width: 361px) and (max-width: 720px)');
-    const mediaQueryMin1201 = window.matchMedia('(min-width: 721px)');
+    const mediaQueryMax768 = window.matchMedia('(max-width: 720px)');
+    const mediaQueryMax768AndMin1200 = window.matchMedia('(min-width: 721px) and (max-width: 1200px)');
+    const mediaQueryMin1201 = window.matchMedia('(min-width: 1201px)');
     const img = document.querySelector('.back-img');
 
     function handleMediaQueryMax768(e) {

@@ -12,6 +12,13 @@ $yellow-color: rgb(255, 251, 16);
     font-weight: normal;
 }
 
+@font-face {
+    font-family: "Nexa Script Light";
+    src: url("./fonts/ofont.ru_Nexa\ Script.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
 canvas {
     z-index: 0;
     background-color: transparent;
@@ -50,12 +57,33 @@ canvas {
     transition: background-color 2s linear;
 }
 
-// .block {
-//     display: block;
-//     background-color: pink;
-//     width: 600px;
-//     height: 300px;
-// }
+.holidayCard {
+    display: flex;
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+    background-color: pink;
+    width: 600px;
+    height: 400px;
+    z-index: 2;
+}
+
+.halfHolidayCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 5px;
+    width: calc(50% - 10px);
+    height: calc(100% - 10px);
+}
+
+.holidayCard__content {
+    font-family: "Nexa Script Light";
+    font-size: 32pt;
+    text-align: center;
+    margin: auto;
+}
 
 .back-img {
     max-height: 60%;
