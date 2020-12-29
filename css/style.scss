@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    color: rgb(255, 251, 16);
 }
 
 @font-face {
@@ -32,7 +31,10 @@ canvas {
     font-family: "digital-7 regular font";
     font-size: 48pt;
     font: 700;
-    
+    color: rgb(255, 251, 16);
+    // rgb(255, 251, 16)
+    // text-shadow: 0 0 20px  rgb(255, 251, 16);
+    text-shadow: 0 0 10px #f5f0f0, 0 0 20px #101010, 0 0 30px #101010, 0 0 40px #101010, 0 0 50px  rgb(255, 251, 16), 0 0 60px  rgb(255, 251, 16), 0 0 70px  rgb(255, 251, 16);
 }
 
 .wrapper {
@@ -72,4 +74,5 @@ canvas {
 
 .night {
     background-color: #001438;
+
 }
