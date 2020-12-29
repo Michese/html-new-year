@@ -27,7 +27,6 @@ window.onload = function () {
 
 
     const wrapper = document.querySelector('.wrapper');
-    wrapper.
 
 }
 
