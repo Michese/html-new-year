@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #fffb10;
+}
+
+@font-face {
+  font-family: "digital-7 regular font";
+  src: url("./fonts/digital-7.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+canvas {
+  z-index: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.timer-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  z-index: 1;
+}
+
+.timer {
+  font-family: "digital-7 regular font";
+  font-size: 48pt;
+  font: 700;
+}
+
+.wrapper {
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.kremlin-img {
+  max-height: 100%;
+  max-width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  z-index: 1;
+}
+
+.afternoon {
+  background-color: #1d6db2;
+}
+
+.morning {
+  background-color: #006cad;
+}
+
+.evening {
+  background-color: #00396e;
+}
+
+.night {
+  background-color: #001438;
+}
+/*# sourceMappingURL=style.css.map */

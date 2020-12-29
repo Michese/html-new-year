@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 251, 16);
+}
+
+@font-face {
+    font-family: "digital-7 regular font";
+    src: url("./fonts/digital-7.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+canvas {
+    z-index: 0;
+    background-color: transparent;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+
+.timer-block {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex: 0 0 auto;
+    z-index: 1;
+}
+
+.timer {
+    font-family: "digital-7 regular font";
+    font-size: 48pt;
+    font: 700;
+    
+}
+
+.wrapper {
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    position: relative;
+}
+
+// .block {
+//     display: block;
+//     background-color: pink;
+//     width: 600px;
+//     height: 300px;
+// }
+
+.kremlin-img {
+    max-height: 100%;
+    max-width: 100%;
+    flex: 1 0 auto;
+    z-index: 1;
+}
+
+.afternoon {
+    background-color: #1d6db2;
+}
+
+.morning {
+    background-color: #006cad;
+}
+
+.evening {
+    background-color: #00396e;
+}
+
+.night {
+    background-color: #001438;
+}
