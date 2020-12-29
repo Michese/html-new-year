@@ -43,6 +43,9 @@ canvas {
 
 .wrapper {
   background-size: cover;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -53,11 +56,13 @@ canvas {
       -ms-flex-direction: column;
           flex-direction: column;
   position: relative;
+  -webkit-transition: background-color 2s linear;
+  transition: background-color 2s linear;
 }
 
 .kremlin-img {
-  max-height: 100%;
-  max-width: 100%;
+  max-height: 60%;
+  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;

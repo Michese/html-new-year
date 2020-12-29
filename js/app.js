@@ -1,4 +1,5 @@
 window.onload = function () {
+
     const timerBlock = document.querySelector('.timer-block');
     const hours = timerBlock.querySelector('.hour');
     const seconds = timerBlock.querySelector('.second');
@@ -6,8 +7,11 @@ window.onload = function () {
     const newYearDate2021 = new Date(2021, 0, 1);
     let currentDate = new Date();
     let intervalToNewYear2021 = Math.floor((+newYearDate2021 - +currentDate) / 1000);
+
     timerSetIntervalId = setInterval(() => {
+
         hours.innerHTML = Math.floor(intervalToNewYear2021 / 3600);
+
         if (Math.floor((intervalToNewYear2021 % 3600) / 60) > 9) {
             minutes.innerHTML = Math.floor((intervalToNewYear2021 % 3600) / 60);
         } else {
@@ -23,10 +27,19 @@ window.onload = function () {
         console.log('0' + (Math.floor(intervalToNewYear2021 % 60)).toString());
         currentDate = new Date();
         intervalToNewYear2021 = Math.floor((+newYearDate2021 - +currentDate) / 1000);
+
     }, 1000);
 
 
     const wrapper = document.querySelector('.wrapper');
+    const mediaQuery = window.matchMedia('(min-width: 768px)')
 
+    function handleTabletChange(e) {
+        if (e.matches) {
+          console.log('Media Query Matched!');
+        }
+      };
+      mediaQuery.addListener(handleTabletChange);
+      handleTabletChange(mediaQuery);
 }
 
