@@ -51,13 +51,16 @@ window.onload = function () {
 
 
     
-    const mediaQueryMax768 = window.matchMedia('(max-width: 768px)')
-    const mediaQueryMax768AndMin1200 = window.matchMedia('(min-width: 769px) and (max-width: 1200px)')
-    const mediaQueryMin1201 = window.matchMedia('(min-width: 1201px)')
+    const mediaQueryMax768 = window.matchMedia('(max-width: 360px)');
+    const mediaQueryMax768AndMin1200 = window.matchMedia('(min-width: 361px) and (max-width: 720px)');
+    const mediaQueryMin1201 = window.matchMedia('(min-width: 721px)');
+    const img = document.querySelector('.back-img');
 
     function handleMediaQueryMax768(e) {
         if (e.matches) {
           console.log('mediaQueryMax768');
+          img.src = 'img/back-640.png';
+          console.log(img.attributes.src);
         //   wrapper.classList = 'wrapper morning';
         }
       };
@@ -67,6 +70,8 @@ window.onload = function () {
       function handleMediaQueryMax768AndMin1200(e) {
         if (e.matches) {
           console.log('mediaQueryMax768AndMin1200');
+          console.log(img.attributes.src);
+          img.src = 'img/back-1280.png';
         }
       };
       mediaQueryMax768AndMin1200.addListener(handleMediaQueryMax768AndMin1200);
@@ -75,6 +80,8 @@ window.onload = function () {
       function handleMediaQueryMin1201(e) {
         if (e.matches) {
           console.log('mediaQueryMin1201');
+          console.log(img.attributes.src);
+          img.src = 'img/back-1920.png';
         }
       };
       mediaQueryMin1201.addListener(handleMediaQueryMin1201);
