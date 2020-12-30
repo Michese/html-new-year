@@ -39,8 +39,6 @@ function fireworks() {
 		my;
 	var timerTotal;
 	if(cw < 479) {
-		timerTotal = 50;
-	} else if(cw < 767){
 		timerTotal = 30;
 	} else {
 		timerTotal = 10;
@@ -200,6 +198,14 @@ function fireworks() {
 	// create particle group/explosion
 	function createParticles(x, y) {
 		// increase the particle count for a bigger explosion, beware of the canvas performance hit with the increased particles though
+		var particleCount;
+		if(cw < 479) {
+			particleCount = 10;
+		} else if(cw < 767) {
+			particleCount = 30;
+		} else {
+			particleCount = 50;
+		}
 		var particleCount = 50;
 		while (particleCount--) {
 			particles.push(new Particle(x, y));
