@@ -1,7 +1,7 @@
 window.onload = function () {
     fireworks(); // fireworkActivated
-    snow(); // snowActivated
-    snowActivated = false;
+    // snow(); // snowActivated
+    // snowActivated = false;
     const wrapper = document.querySelector('.wrapper');
 
 
@@ -126,6 +126,6 @@ window.onload = function () {
                 audio.volume = 1;
             }
           });
-    }, 1000);
+    }, 2000);
 }
 
