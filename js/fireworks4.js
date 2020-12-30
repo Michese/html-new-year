@@ -206,7 +206,6 @@ function fireworks() {
 		} else {
 			particleCount = 50;
 		}
-		var particleCount = 50;
 		while (particleCount--) {
 			particles.push(new Particle(x, y));
 		}
