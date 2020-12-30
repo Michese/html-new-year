@@ -143,7 +143,7 @@ canvas {
   text-decoration: none;
   font-style: none;
   position: fixed;
-  top: 30px;
+  top: 20px;
   border-radius: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -216,8 +216,11 @@ canvas {
   }
   .new_year__block {
     font-size: 2rem;
-    bottom: 30px;
+    bottom: 10px;
     top: auto;
+  }
+  .back-img {
+    max-height: 40%;
   }
 }
 
@@ -227,7 +230,7 @@ canvas {
   }
   .new_year__block {
     font-size: 2rem;
-    bottom: 30px;
+    bottom: 10px;
     top: auto;
   }
 }

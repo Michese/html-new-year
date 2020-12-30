@@ -63,7 +63,7 @@
 @media (max-width: 479px) {
   .card {
     left: calc(50% - 75px);
-    top: calc(50% - 107px);
+    top: calc(50% - 200px);
   }
 }
 
@@ -162,7 +162,7 @@
   .card,
   .card-page {
     width: 150px;
-    height: 214px;
+    height: 250px;
   }
 }
 
@@ -403,7 +403,12 @@
   .card-page__title,
   .card-page__content  {
     /* display: none; */
-    font-size: 0.56rem;
+    font-size: 0.6rem;
     font-weight: 700;
+  }
+
+  .merry-christmas {
+    margin-top: 60%;
+    margin-left: 23%;
   }
 }
