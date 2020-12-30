@@ -62,21 +62,20 @@ window.onload = function () {
 
 
     
-    const mediaQueryMax768 = window.matchMedia('(max-width: 720px)');
+    const mediaQueryMax479 = window.matchMedia('(max-width: 720px)');
     const mediaQueryMax768AndMin1200 = window.matchMedia('(min-width: 721px) and (max-width: 1200px)');
     const mediaQueryMin1201 = window.matchMedia('(min-width: 1201px)');
     const img = document.querySelector('.back-img');
 
-    function handleMediaQueryMax768(e) {
+    function handleMediaQueryMax479(e) {
         if (e.matches) {
-          console.log('mediaQueryMax768');
+          console.log('mediaQueryMax479');
           img.src = 'img/back-640.png';
-          console.log(img.attributes.src);
-        //   wrapper.classList = 'wrapper morning';
+            fireworkActivated = false;
         }
       };
-      mediaQueryMax768.addListener(handleMediaQueryMax768);
-      handleMediaQueryMax768(mediaQueryMax768);
+      mediaQueryMax479.addListener(handleMediaQueryMax479);
+      handleMediaQueryMax479(mediaQueryMax479);
 
       function handleMediaQueryMax768AndMin1200(e) {
         if (e.matches) {
