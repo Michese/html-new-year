@@ -1,5 +1,5 @@
 window.onload = function () {
-    fireworks(); // fireworkActivated
+    // fireworks(); // fireworkActivated
     snow(); // snowActivated
     fireworkActivated = false;
     let isNewYear = false;
@@ -73,6 +73,7 @@ window.onload = function () {
 
     function handleMediaQueryMax479(e) {
         if (e.matches) {
+            showActivated = false;
             console.log('mediaQueryMax479');
             img.src = 'img/back-640.png';
             celebrate();
@@ -147,7 +148,9 @@ window.onload = function () {
     });
 
     function celebrate() {
+        
         if(isNewYear === true) {
+            fireworks();
             fireworkActivated = true;
             clearInterval(timerSetIntervalId);
             hours.textContent = '00';
