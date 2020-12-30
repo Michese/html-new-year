@@ -136,27 +136,31 @@
   }
 }
 
-.card, .card-page {
+.card,
+.card-page {
   width: 490px;
   height: 700px;
 }
 
 @media (max-width: 1140px) {
-  .card, .card-page {
+  .card,
+  .card-page {
     width: 350px;
     height: 500px;
   }
 }
 
 @media (max-width: 767px) {
-  .card, .card-page {
+  .card,
+  .card-page {
     width: 230px;
     height: 329px;
   }
 }
 
 @media (max-width: 479px) {
-  .card, .card-page {
+  .card,
+  .card-page {
     width: 150px;
     height: 214px;
   }
@@ -182,7 +186,8 @@
   z-index: 2;
 }
 
-.cart-page-outside, .cart-page-inside {
+.cart-page-outside,
+.cart-page-inside {
   position: absolute;
   -webkit-backface-visibility: hidden;
 }
@@ -207,9 +212,9 @@
 .cart-page-inside,
 .cart-page-bottom {
   /* background-color: #d4d1d0; */
-  background-image: url("../img/pattern.png");
+  /* background-image: url("../img/pattern.png"); */
   background-color: pink;
-  border: 20px solid #d4d1d0;
+  /* border: 20px solid #d4d1d0; */
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -231,26 +236,34 @@
   align-items: center;
   -ms-flex-align: center;
   text-align: center;
+
+  /* -webkit-background-size: cover;
+  background-size: cover; */
+  /* img/Otkr.jpg */
+  /* background-color: pink; */
+  /* background-size: cover; */
+  width: 100%;
+  height: 100%;
 }
-.cart-page-bottom{
+.cart-page-bottom {
   flex-direction: column;
+  background: #1179b6 url("../img/rightHalfHolidayCard.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
-.card-page__title{
+.card-page__title {
   /* font-size: 20px; */
-  color: #D50000;
-}
-@media (max-width: 767px) {
-  .cart-page-inside,
-  .cart-page-bottom {
-    border: 10px solid #d4d1d0;
-  }
+  color: #d50000;
 }
 
 .cart-page-inside {
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
-  border-right: none !important;
-  background-position: 0px 80px;
+  /* border-right: none !important; */
+  background: #1179b6 url("../img/leftHalfHolidayCard.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  /* background-position: 0px 80px; */
 }
 
 @media (max-width: 479px) {
@@ -271,36 +284,9 @@
   }
 }
 
-@media (max-width: 767px) {
-
-  .cart-page-inside {
-    background-position: 0px 30px;
-  }
-}
-
-@media (max-width: 479px) {
-
-  .cart-page-inside {
-    background-position: 0px 30px;
-  }
-}
-
 .cart-page-bottom {
-  z-index: 1;
-  border-left: none !important;
-  background-position: -22px 80px;
-}
-
-@media (max-width: 767px) {
-  .cart-page-bottom {
-    background-position: 85px 30px;
-  }
-}
-
-@media (max-width: 479px) {
-  .cart-page-bottom {
-    background-position: 0px 30px;
-  }
+  /* z-index: 1; */
+  /* border-left: none !important; */
 }
 
 .merry-christmas {
@@ -383,23 +369,38 @@
   }
 }
 
-p {
+.card-page__content {
   /* font-size: 16px; */
+  font-size: 2rem;
+  padding: 0 10px;
   line-height: 1.2em;
-  padding-left: 10px;
+  padding-right: 30px;
+}
+
+@media (max-width: 1140px) {
+  .card-page__title,
+  .card-page__content {
+    font-size: 1.5rem;
+  }
+  /* p {
+   font-size: 14px;
+ }  */
 }
 
 @media (max-width: 767px) {
-  /* .card-page__title{
-    font-size: 16px;
+  .card-page__title,
+  .card-page__content {
+    font-size: 0.93rem;
   }
-  p {
+  /* p {
     font-size: 14px;
-  } */
+  }  */
 }
 
 @media (max-width: 479px) {
-  .card-page__text{
-    display: none;
+  .card-page__title,
+  .card-page__content  {
+    /* display: none; */
+    font-size: 0.56rem;
   }
 }

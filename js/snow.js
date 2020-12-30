@@ -1,4 +1,4 @@
-let showActivated = false;
+let snowActivated = false;
 
 function snow() {
   snowActivated = true;

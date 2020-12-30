@@ -1,10 +1,12 @@
 window.onload = function () {
-    // fireworks(); // fireworkActivated
-    snow(); // snowActivated
+    snow();
+    fireworks();
     fireworkActivated = false;
+    snowActivated = false;
     let isNewYear = false;
 
     const wrapper = document.querySelector('.wrapper');
+    const canvas = document.querySelector('.canvas');
     const timerBlock = document.querySelector('.timer-block');
     const timer = timerBlock.querySelector('.timer');
     const hours = timerBlock.querySelector('.hour');
@@ -73,7 +75,6 @@ window.onload = function () {
 
     function handleMediaQueryMax479(e) {
         if (e.matches) {
-            showActivated = false;
             console.log('mediaQueryMax479');
             img.src = 'img/back-640.png';
             celebrate();
@@ -149,25 +150,27 @@ window.onload = function () {
 
     function celebrate() {
         
+        console.log("Hello");
         if(isNewYear === true) {
-            fireworks();
-            fireworkActivated = true;
+
             clearInterval(timerSetIntervalId);
             hours.textContent = '00';
             minutes.textContent = '00';
             seconds.textContent = '00';
             timer.classList.toggle('pulse');
             alternationOfDay();
+            if(canvas.width >= 480) {
+                fireworkActivated = true;
+            }
         }
 
-        function handleMediaQueryMaxp479(e) {
-            if (e.matches) {
-                console.log('handleMediaQueryMin480');
-                fireworkActivated = false;
-            }
-        };
-        mediaQueryMax479.addListener(handleMediaQueryMaxp479);
-        handleMediaQueryMaxp479(mediaQueryMax479);
+
+        if(canvas.width >= 480) {
+            snowActivated = true;
+        } else {
+            fireworkActivated = false;
+            snowActivated = false;
+        }
     }
 }
 
