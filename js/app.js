@@ -1,6 +1,7 @@
 window.onload = function () {
     fireworks(); // fireworkActivated
     snow(); // snowActivated
+    fireworkActivated = false;
     let isNewYear = false;
 
     const wrapper = document.querySelector('.wrapper');
@@ -18,7 +19,8 @@ window.onload = function () {
     
     alternationOfDay = () => {
         const currentHour = currentDate.getHours();
-        if (currentHour >= 0 && currentHour < 6) {
+        
+        if (isNewYear === true || currentHour >= 0 && currentHour < 6) {
             wrapper.classList = 'wrapper night';
         } else if (currentHour >= 6 && currentHour < 12) {
             wrapper.classList = 'wrapper morning';
@@ -151,6 +153,7 @@ window.onload = function () {
             minutes.textContent = '00';
             seconds.textContent = '00';
             timer.classList.toggle('pulse');
+            alternationOfDay();
         }
 
         function handleMediaQueryMax479(e) {
