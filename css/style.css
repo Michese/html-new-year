@@ -134,6 +134,34 @@ canvas {
   border-color: #fffb10;
 }
 
+.new_year__block {
+  text-decoration: none;
+  font-style: none;
+  position: fixed;
+  top: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  right: 10px;
+  border: pink 5px solid;
+  padding: 10px;
+  color: pink;
+  font-size: 1rem;
+  z-index: 3;
+  -webkit-transition: color .5s linear, border-color .5s linear;
+  transition: color .5s linear, border-color .5s linear;
+  cursor: pointer;
+}
+
+.new_year__block:hover {
+  color: #fffb10;
+  border-color: #fffb10;
+}
+
+.new_year__link {
+  padding: 0;
+}
+
 .afternoon {
   background-color: #1d6db2;
 }
@@ -150,11 +178,38 @@ canvas {
   background-color: #001438;
 }
 
+@-webkit-keyframes pulsate {
+  50% {
+    color: #fffb10;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes pulsate {
+  50% {
+    color: #fffb10;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.pulse {
+  -webkit-animation: pulsate 1.2s linear infinite;
+  animation: pulsate 1.2s linear infinite;
+}
+
 @media (max-width: 479px) {
   .volume {
     font-size: 1rem;
     bottom: 10px;
     top: auto;
+  }
+  .new_year__block {
+    font-size: 1rem;
+    bottom: 10px;
+    top: auto;
+  }
+  .new_year__hidden {
+    display: none;
   }
 }
 
@@ -162,11 +217,17 @@ canvas {
   .volume {
     font-size: 2rem;
   }
+  .new_year__block {
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 768px) {
   .volume {
     font-size: 4rem;
+  }
+  .new_year__block {
+    font-size: 2rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

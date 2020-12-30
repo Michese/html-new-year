@@ -111,6 +111,30 @@ canvas {
     }
 }
 
+.new_year__block {
+    text-decoration: none;
+    font-style: none;
+    position: fixed;
+    top: 10px;
+    align-items: center;
+    right: 10px;
+    border: pink 5px solid;
+    padding: 10px;
+    color: pink;
+    font-size: 1rem;
+    z-index: 3;
+    transition: color .5s linear, border-color .5s linear;
+    cursor: pointer;
+    &:hover {
+        color: rgb(255, 251, 16);
+        border-color:rgb(255, 251, 16);
+    }
+}
+
+.new_year__link {
+    padding: 0;
+}
+
 .afternoon {
     background-color: #1d6db2;
 }
@@ -128,24 +152,47 @@ canvas {
 
 }
 
+@keyframes pulsate{50%{color:rgb(255, 251, 16) ;text-shadow:0 -1px rgba(0,0,0,.3)}}
+
+.pulse {
+    -webkit-animation: pulsate 1.2s linear infinite;
+    animation: pulsate 1.2s linear infinite;
+}
+
 @media (max-width:479px)  {
     .volume {
         font-size: 1rem;
         bottom: 10px;
         top:auto;
     }
+
+    .new_year__block {
+        font-size: 1rem;
+        bottom: 10px;
+        top: auto;
+    }
+
+    .new_year__hidden {
+        display: none;
+    }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
     .volume {
         font-size: 2rem;
-        
+    }
+
+    .new_year__block {
+        font-size: 2rem;
     }
 }
 
 @media (min-width: 768px) {
     .volume {
         font-size: 4rem;
+    }
 
+    .new_year__block {
+        font-size: 2rem;
     }
 }

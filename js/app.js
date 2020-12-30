@@ -1,11 +1,11 @@
 window.onload = function () {
     fireworks(); // fireworkActivated
-    // snow(); // snowActivated
-    // snowActivated = false;
+    snow(); // snowActivated
+    let isNewYear = false;
+
     const wrapper = document.querySelector('.wrapper');
-
-
     const timerBlock = document.querySelector('.timer-block');
+    const timer = timerBlock.querySelector('.timer');
     const hours = timerBlock.querySelector('.hour');
     const seconds = timerBlock.querySelector('.second');
     const minutes = timerBlock.querySelector('.minute');
@@ -14,9 +14,11 @@ window.onload = function () {
     let currentDate = new Date();
     let intervalToNewYear2021 = Math.floor((+newYearDate2021 - +currentDate) / 1000);
 
+
+    
     alternationOfDay = () => {
         const currentHour = currentDate.getHours();
-        if(currentHour >= 0 && currentHour < 6) {
+        if (currentHour >= 0 && currentHour < 6) {
             wrapper.classList = 'wrapper night';
         } else if (currentHour >= 6 && currentHour < 12) {
             wrapper.classList = 'wrapper morning';
@@ -31,7 +33,7 @@ window.onload = function () {
     alternationOfDay();
 
     timerSetIntervalId = setInterval(() => {
-        if(intervalToNewYear2021 <= 0) {
+        if (intervalToNewYear2021 <= 0) {
             intervalToNewYear2021 = 0;
         }
 
@@ -50,18 +52,18 @@ window.onload = function () {
         }
 
         currentDate = new Date();
-        if(currentDate.getHours() === 0 || currentDate.getHours() === 6 ||currentDate.getHours() === 12 || currentDate.getHours() === 18) {
+        if (currentDate.getHours() === 0 || currentDate.getHours() === 6 || currentDate.getHours() === 12 || currentDate.getHours() === 18) {
             alternationOfDay();
         }
         intervalToNewYear2021 = Math.floor((+newYearDate2021 - +currentDate) / 1000);
 
-        if(intervalToNewYear2021 < 0) {
-            clearInterval(timerSetIntervalId);   
+        if (intervalToNewYear2021 < 0) {
+            celebrate();
         }
     }, 1000);
 
 
-    
+
     const mediaQueryMax479 = window.matchMedia('(max-width: 720px)');
     const mediaQueryMax768AndMin1200 = window.matchMedia('(min-width: 721px) and (max-width: 1200px)');
     const mediaQueryMin1201 = window.matchMedia('(min-width: 1201px)');
@@ -69,39 +71,41 @@ window.onload = function () {
 
     function handleMediaQueryMax479(e) {
         if (e.matches) {
-          console.log('mediaQueryMax479');
-          img.src = 'img/back-640.png';
-            fireworkActivated = false;
+            console.log('mediaQueryMax479');
+            img.src = 'img/back-640.png';
+            celebrate();
         }
-      };
-      mediaQueryMax479.addListener(handleMediaQueryMax479);
-      handleMediaQueryMax479(mediaQueryMax479);
+    };
+    mediaQueryMax479.addListener(handleMediaQueryMax479);
+    handleMediaQueryMax479(mediaQueryMax479);
 
-      function handleMediaQueryMax768AndMin1200(e) {
+    function handleMediaQueryMax768AndMin1200(e) {
         if (e.matches) {
-          console.log('mediaQueryMax768AndMin1200');
-          console.log(img.attributes.src);
-          img.src = 'img/back-1280.png';
+            console.log('mediaQueryMax768AndMin1200');
+            console.log(img.attributes.src);
+            img.src = 'img/back-1280.png';
+            celebrate();
         }
-      };
-      mediaQueryMax768AndMin1200.addListener(handleMediaQueryMax768AndMin1200);
-      handleMediaQueryMax768AndMin1200(mediaQueryMax768AndMin1200);
+    };
+    mediaQueryMax768AndMin1200.addListener(handleMediaQueryMax768AndMin1200);
+    handleMediaQueryMax768AndMin1200(mediaQueryMax768AndMin1200);
 
-      function handleMediaQueryMin1201(e) {
+    function handleMediaQueryMin1201(e) {
         if (e.matches) {
-          console.log('mediaQueryMin1201');
-          console.log(img.attributes.src);
-          img.src = 'img/back-1920.png';
+            console.log('mediaQueryMin1201');
+            console.log(img.attributes.src);
+            img.src = 'img/back-1920.png';
+            celebrate();
         }
-      };
-      mediaQueryMin1201.addListener(handleMediaQueryMin1201);
-      handleMediaQueryMin1201(mediaQueryMin1201);
+    };
+    mediaQueryMin1201.addListener(handleMediaQueryMin1201);
+    handleMediaQueryMin1201(mediaQueryMin1201);
 
-      const card = document.querySelector('#card');
+    const card = document.querySelector('#card');
 
-      card.addEventListener('click', () => {
-          card.classList.toggle('is-opened');
-      })
+    card.addEventListener('click', () => {
+        card.classList.toggle('is-opened');
+    })
 
 
 
@@ -110,6 +114,7 @@ window.onload = function () {
     setTimeout(() => {
         const audio = document.querySelector('.audio');
         while (audio == null) {
+            console.log(audio);
             audio = document.querySelector('.audio');
         }
         const buttonVolume = document.querySelector('.volume');
@@ -117,17 +122,45 @@ window.onload = function () {
 
         buttonVolume.addEventListener('click', () => {
             const icon = buttonVolume.querySelector('#volume__icon');
-            if(icon.classList.contains('fa-volume-up')) {
+            if (icon.classList.contains('fa-volume-up')) {
                 icon.classList.remove('fa-volume-up');
                 icon.classList.toggle('fa-volume-mute')
                 audio.volume = 0;
             } else {
                 icon.classList.remove('fa-volume-mute');
                 icon.classList.toggle('fa-volume-up');
-
+                audio.play();
                 audio.volume = 1;
             }
-          });
+        });
     }, 2000);
+
+    //
+
+    const buttonNewYear = document.querySelector('.new_year__block');
+    buttonNewYear.addEventListener('click', function() {
+        isNewYear = true;
+        celebrate();
+    });
+
+    function celebrate() {
+        if(isNewYear === true) {
+            fireworkActivated = true;
+            clearInterval(timerSetIntervalId);
+            hours.textContent = '00';
+            minutes.textContent = '00';
+            seconds.textContent = '00';
+            timer.classList.toggle('pulse');
+        }
+
+        function handleMediaQueryMax479(e) {
+            if (e.matches) {
+                console.log('handleMediaQueryMin480');
+                fireworkActivated = false;
+            }
+        };
+        mediaQueryMax479.addListener(handleMediaQueryMax479);
+        handleMediaQueryMax479(mediaQueryMax479);
+    }
 }
 
