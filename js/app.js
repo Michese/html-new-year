@@ -3,10 +3,13 @@ window.onload = function () {
     snow(); // snowActivated
     // snowActivated = false;
     const wrapper = document.querySelector('.wrapper');
+
+
     const timerBlock = document.querySelector('.timer-block');
     const hours = timerBlock.querySelector('.hour');
     const seconds = timerBlock.querySelector('.second');
     const minutes = timerBlock.querySelector('.minute');
+
     const newYearDate2021 = new Date(2021, 0, 1);
     let currentDate = new Date();
     let intervalToNewYear2021 = Math.floor((+newYearDate2021 - +currentDate) / 1000);
@@ -95,16 +98,34 @@ window.onload = function () {
       mediaQueryMin1201.addListener(handleMediaQueryMin1201);
       handleMediaQueryMin1201(mediaQueryMin1201);
 
-
-    //   var $clickMe = $('.click-icon'),
-      let card = document.querySelector('#card');
+      const card = document.querySelector('#card');
 
       card.addEventListener('click', () => {
           card.classList.toggle('is-opened');
       })
-//   $card.on('click', function() {
-//     $(this).toggleClass('is-opened');
-//     $clickMe.toggleClass('is-hidden');
 
+
+
+    //   
+
+    setTimeout(() => {
+        const audio = document.querySelector('.audio');
+        const buttonVolume = document.querySelector('.volume');
+        audio.play();
+
+        buttonVolume.addEventListener('click', () => {
+            const icon = buttonVolume.querySelector('#volume__icon');
+            if(icon.classList.contains('fa-volume-up')) {
+                icon.classList.remove('fa-volume-up');
+                icon.classList.toggle('fa-volume-mute')
+                audio.volume = 0;
+            } else {
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.toggle('fa-volume-up');
+
+                audio.volume = 1;
+            }
+          });
+    }, 1000);
 }
 

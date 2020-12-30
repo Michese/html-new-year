@@ -19,7 +19,7 @@
   perspective: 1500px;
   position: absolute;
   left: calc(50% - 175px);
-  top: calc(50% - 250px);
+  top: calc(50% - 350px);
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
@@ -130,8 +130,15 @@
 }
 
 .card, .card-page {
-  width: 350px;
-  height: 500px;
+  width: 490px;
+  height: 700px;
+}
+
+@media (max-width: 1140px) {
+  .card, .card-page {
+    width: 350px;
+    height: 500px;
+  }
 }
 
 @media (max-width: 767px) {
