@@ -1,5 +1,7 @@
 window.onload = function () {
-
+    fireworks(); // fireworkActivated
+    snow(); // snowActivated
+    snowActivated = false;
     const wrapper = document.querySelector('.wrapper');
     const timerBlock = document.querySelector('.timer-block');
     const hours = timerBlock.querySelector('.hour');
