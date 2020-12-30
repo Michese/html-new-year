@@ -110,6 +110,9 @@ window.onload = function () {
 
     setTimeout(() => {
         const audio = document.querySelector('.audio');
+        while (audio == null) {
+            audio = document.querySelector('.audio');
+        }
         const buttonVolume = document.querySelector('.volume');
         audio.play();
 
