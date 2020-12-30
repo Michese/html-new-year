@@ -138,18 +138,21 @@ canvas {
   text-decoration: none;
   font-style: none;
   position: fixed;
-  top: 10px;
+  top: 30px;
+  border-radius: 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   right: 10px;
   border: pink 5px solid;
-  padding: 10px;
+  padding: 3px;
   color: pink;
   font-size: 1rem;
   z-index: 3;
-  -webkit-transition: color .5s linear, border-color .5s linear;
-  transition: color .5s linear, border-color .5s linear;
+  -webkit-transition: color .5s linear, border-color .5s linear, -webkit-box-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, -webkit-box-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, box-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, box-shadow .5s linear, -webkit-box-shadow .5s linear;
   cursor: pointer;
 }
 
@@ -193,8 +196,8 @@ canvas {
 }
 
 .pulse {
-  -webkit-animation: pulsate 1.2s linear infinite;
-  animation: pulsate 1.2s linear infinite;
+  -webkit-animation: pulsate 4s linear infinite;
+  animation: pulsate 4s linear infinite;
 }
 
 @media (max-width: 479px) {
@@ -204,12 +207,9 @@ canvas {
     top: auto;
   }
   .new_year__block {
-    font-size: 1rem;
-    bottom: 10px;
+    font-size: 2rem;
+    bottom: 30px;
     top: auto;
-  }
-  .new_year__hidden {
-    display: none;
   }
 }
 
@@ -219,6 +219,8 @@ canvas {
   }
   .new_year__block {
     font-size: 2rem;
+    bottom: 30px;
+    top: auto;
   }
 }
 

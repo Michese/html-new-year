@@ -46,6 +46,13 @@
   font-family: "Nexa Script Light";
 }
 
+@media (max-width: 1140px) {
+  .card {
+    left: calc(50% - 115px);
+    top: calc(50% - 200px);
+  }
+}
+
 @media (max-width: 767px) {
   .card {
     left: calc(50% - 115px);
@@ -183,6 +190,8 @@
 .cart-page-outside {
   border: 10px solid #fbfbfb;
   /* background: #c72320 url("../img/front-bg.png") no-repeat center; */
+  background: #1179b6 url("../img/Otkr.jpg") no-repeat center;
+  /* img/Otkr.jpg */
   background-color: pink;
   background-size: cover;
   width: 100%;
@@ -198,7 +207,7 @@
 .cart-page-inside,
 .cart-page-bottom {
   /* background-color: #d4d1d0; */
-  /* background-image: url("../img/pattern.png"); */
+  background-image: url("../img/pattern.png");
   background-color: pink;
   border: 20px solid #d4d1d0;
   display: -webkit-box;
