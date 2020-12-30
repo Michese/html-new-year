@@ -94,5 +94,17 @@ window.onload = function () {
       };
       mediaQueryMin1201.addListener(handleMediaQueryMin1201);
       handleMediaQueryMin1201(mediaQueryMin1201);
+
+
+    //   var $clickMe = $('.click-icon'),
+      let card = document.querySelector('#card');
+
+      card.addEventListener('click', () => {
+          card.classList.toggle('is-opened');
+      })
+//   $card.on('click', function() {
+//     $(this).toggleClass('is-opened');
+//     $clickMe.toggleClass('is-hidden');
+
 }
 
