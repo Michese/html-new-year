@@ -7,6 +7,7 @@ window.onload = function () {
 
     const wrapper = document.querySelector('.wrapper');
     const canvas = document.querySelector('.canvas');
+    let audio = document.querySelector('.audio');
     const timerBlock = document.querySelector('.timer-block');
     const timer = timerBlock.querySelector('.timer');
     const hours = timerBlock.querySelector('.hour');
@@ -116,7 +117,7 @@ window.onload = function () {
     //   
 
     setTimeout(() => {
-        const audio = document.querySelector('.audio');
+        audio = document.querySelector('.audio');
         while (audio == null) {
             console.log(audio);
             audio = document.querySelector('.audio');
@@ -149,8 +150,7 @@ window.onload = function () {
     });
 
     function celebrate() {
-        
-        console.log("Hello");
+    
         if(isNewYear === true) {
 
             clearInterval(timerSetIntervalId);
@@ -158,12 +158,13 @@ window.onload = function () {
             minutes.textContent = '00';
             seconds.textContent = '00';
             timer.classList.toggle('pulse');
+            audio.src = "audio/audio_2.mp3";
+            audio.play();
             alternationOfDay();
             if(canvas.width >= 480) {
                 fireworkActivated = true;
             }
         }
-
 
         if(canvas.width >= 480) {
             snowActivated = true;

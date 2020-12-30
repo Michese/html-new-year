@@ -1,4 +1,5 @@
-$yellow-color: rgb(255, 251, 16);
+$yellow-color: pink	;
+$blue-color: #66c9d5;
 
 * {
     margin: 0;
@@ -17,6 +18,7 @@ $yellow-color: rgb(255, 251, 16);
     src: url("./fonts/ofont.ru_Nexa\ Script.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
+    
 }
 
 canvas {
@@ -41,9 +43,8 @@ canvas {
     font-size: 48pt;
     font: 700;
     color: $yellow-color;
-    // rgb(255, 251, 16)
-    // text-shadow: 0 0 20px  rgb(255, 251, 16);
-    text-shadow: 0 0 10px #f5f0f0, 0 0 20px #101010, 0 0 30px #101010, 0 0 40px #101010, 0 0 50px  $yellow-color, 0 0 60px  $yellow-color, 0 0 70px $yellow-color;
+    // rgb(255, 251, 16)    
+    text-shadow: 0 0 10px  $yellow-color, 0 0 60px  $yellow-color, 0 0 100px $yellow-color;
 }
 
 .wrapper {
@@ -97,17 +98,19 @@ canvas {
     position: fixed;
     top: 10px;
     left: 10px;
-    border: pink 5px solid;
+    border: $yellow-color 5px solid;
     padding: 10px;
-    color: pink;
+    color: $yellow-color;
     border-radius: 50%;
     font-size: 1rem;
     z-index: 3;
-    transition: color .5s linear, border-color .5s linear;
+    transition: color .5s linear, border-color .5s linear, box-shadow .5s linear, text-shadow .5s linear;
     cursor: pointer;
     &:hover {
-        color: rgb(255, 251, 16);
-        border-color:rgb(255, 251, 16);
+        color: $blue-color;
+        border-color: $blue-color;
+        box-shadow: 0 0 10px $blue-color;
+        text-shadow: 0 0 10px $blue-color;
     }
 }
 
@@ -119,17 +122,18 @@ canvas {
     border-radius: 10px;
     align-items: center;
     right: 10px;
-    border: pink 5px solid;
+    border: $yellow-color 5px solid;
     padding: 3px;
-    color: pink;
+    color: $yellow-color;
     font-size: 1rem;
     z-index: 3;
-    transition: color .5s linear, border-color .5s linear, box-shadow .5s linear;
+    transition: color .5s linear, border-color .5s linear, box-shadow .5s linear, text-shadow .5s linear;
     cursor: pointer;
     &:hover {
-        color: rgb(255, 251, 16);
-        border-color:rgb(255, 251, 16);
-        // box-shadow: 0 0 10px 10px rgba(255, 251, 16, 0.5);
+        color: $blue-color;
+        border-color: $blue-color;
+        box-shadow: 0 0 10px $blue-color;
+        text-shadow: 0 0 10px $blue-color;
     }
 }
 
@@ -154,7 +158,7 @@ canvas {
 
 }
 
-@keyframes pulsate{50%{color:rgb(255, 251, 16) ;text-shadow:0 -1px rgba(0,0,0,.3)}}
+@keyframes pulsate{50%{color:$yellow-color ;text-shadow:0 -1px rgba(0,0,0,.3)}}
 
 .pulse {
     -webkit-animation: pulsate 4s linear infinite;

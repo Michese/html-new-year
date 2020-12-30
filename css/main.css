@@ -193,7 +193,7 @@
 }
 
 .cart-page-outside {
-  border: 10px solid #fbfbfb;
+  /* border: 10px solid #fbfbfb; */
   /* background: #c72320 url("../img/front-bg.png") no-repeat center; */
   background: #1179b6 url("../img/holidayCard.jpg") no-repeat center;
   /* img/Otkr.jpg */
@@ -203,11 +203,11 @@
   height: 100%;
 }
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .cart-page-outside {
     border: 5px solid #fbfbfb;
   }
-}
+} */
 
 .cart-page-inside,
 .cart-page-bottom {
@@ -290,8 +290,10 @@
 }
 
 .merry-christmas {
-  -webkit-transform: rotate(-20deg);
-  transform: rotate(-20deg);
+  margin-left: 10%;
+  margin-top: 47%;
+  -webkit-transform: rotate(-15deg);
+  transform: rotate(-15deg);
 }
 
 .merry-christmas img {
@@ -402,5 +404,6 @@
   .card-page__content  {
     /* display: none; */
     font-size: 0.56rem;
+    font-weight: 700;
   }
 }

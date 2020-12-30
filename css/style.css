@@ -44,8 +44,8 @@ canvas {
   font-family: "digital-7 regular font";
   font-size: 48pt;
   font: 700;
-  color: #fffb10;
-  text-shadow: 0 0 10px #f5f0f0, 0 0 20px #101010, 0 0 30px #101010, 0 0 40px #101010, 0 0 50px #fffb10, 0 0 60px #fffb10, 0 0 70px #fffb10;
+  color: pink;
+  text-shadow: 0 0 10px pink, 0 0 60px pink, 0 0 100px pink;
 }
 
 .wrapper {
@@ -124,14 +124,19 @@ canvas {
   border-radius: 50%;
   font-size: 1rem;
   z-index: 3;
-  -webkit-transition: color .5s linear, border-color .5s linear;
-  transition: color .5s linear, border-color .5s linear;
+  -webkit-transition: color .5s linear, border-color .5s linear, text-shadow .5s linear, -webkit-box-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, text-shadow .5s linear, -webkit-box-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, box-shadow .5s linear, text-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, box-shadow .5s linear, text-shadow .5s linear, -webkit-box-shadow .5s linear;
   cursor: pointer;
 }
 
 .volume:hover {
-  color: #fffb10;
-  border-color: #fffb10;
+  color: #66c9d5;
+  border-color: #66c9d5;
+  -webkit-box-shadow: 0 0 10px #66c9d5;
+          box-shadow: 0 0 10px #66c9d5;
+  text-shadow: 0 0 10px #66c9d5;
 }
 
 .new_year__block {
@@ -149,16 +154,19 @@ canvas {
   color: pink;
   font-size: 1rem;
   z-index: 3;
-  -webkit-transition: color .5s linear, border-color .5s linear, -webkit-box-shadow .5s linear;
-  transition: color .5s linear, border-color .5s linear, -webkit-box-shadow .5s linear;
-  transition: color .5s linear, border-color .5s linear, box-shadow .5s linear;
-  transition: color .5s linear, border-color .5s linear, box-shadow .5s linear, -webkit-box-shadow .5s linear;
+  -webkit-transition: color .5s linear, border-color .5s linear, text-shadow .5s linear, -webkit-box-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, text-shadow .5s linear, -webkit-box-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, box-shadow .5s linear, text-shadow .5s linear;
+  transition: color .5s linear, border-color .5s linear, box-shadow .5s linear, text-shadow .5s linear, -webkit-box-shadow .5s linear;
   cursor: pointer;
 }
 
 .new_year__block:hover {
-  color: #fffb10;
-  border-color: #fffb10;
+  color: #66c9d5;
+  border-color: #66c9d5;
+  -webkit-box-shadow: 0 0 10px #66c9d5;
+          box-shadow: 0 0 10px #66c9d5;
+  text-shadow: 0 0 10px #66c9d5;
 }
 
 .new_year__link {
@@ -183,14 +191,14 @@ canvas {
 
 @-webkit-keyframes pulsate {
   50% {
-    color: #fffb10;
+    color: pink;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
   }
 }
 
 @keyframes pulsate {
   50% {
-    color: #fffb10;
+    color: pink;
     text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
   }
 }
