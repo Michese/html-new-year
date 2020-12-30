@@ -30,14 +30,21 @@ function fireworks() {
 		limiterTotal = 10,
 		limiterTick = 0,
 		// this will time the auto launches of fireworks, one launch per 80 loop ticks
-		timerTotal = 10,
+
 		timerTick = 0,
 		mousedown = false,
 		// mouse x coordinate,
 		mx,
 		// mouse y coordinate
 		my;
-
+	var timerTotal;
+	if(cw < 479) {
+		timerTotal = 50;
+	} else if(cw < 767){
+		timerTotal = 30;
+	} else {
+		timerTotal = 10;
+	}
 	// set canvas dimensions
 	canvas.width = cw;
 	canvas.height = ch;
