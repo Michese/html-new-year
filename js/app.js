@@ -121,6 +121,7 @@ window.onload = function () {
         }
         const buttonVolume = document.querySelector('.volume');
         audio.play();
+        audio.volume = 0.5;
 
         buttonVolume.addEventListener('click', () => {
             const icon = buttonVolume.querySelector('#volume__icon');
@@ -132,7 +133,7 @@ window.onload = function () {
                 icon.classList.remove('fa-volume-mute');
                 icon.classList.toggle('fa-volume-up');
                 audio.play();
-                audio.volume = 1;
+                audio.volume = 0.5;
             }
         });
     }, 2000);
@@ -156,14 +157,14 @@ window.onload = function () {
             alternationOfDay();
         }
 
-        function handleMediaQueryMax479(e) {
+        function handleMediaQueryMaxp479(e) {
             if (e.matches) {
                 console.log('handleMediaQueryMin480');
                 fireworkActivated = false;
             }
         };
-        mediaQueryMax479.addListener(handleMediaQueryMax479);
-        handleMediaQueryMax479(mediaQueryMax479);
+        mediaQueryMax479.addListener(handleMediaQueryMaxp479);
+        handleMediaQueryMaxp479(mediaQueryMax479);
     }
 }
 
