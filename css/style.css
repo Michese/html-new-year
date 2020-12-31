@@ -169,6 +169,10 @@ canvas {
   text-shadow: 0 0 10px #66c9d5;
 }
 
+.hidden {
+  display: none;
+}
+
 .new_year__link {
   padding: 0;
 }
